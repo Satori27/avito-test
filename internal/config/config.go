@@ -48,8 +48,4 @@ func mustReadEnv(cfg *Config) {
 	if !exists {
 		slog.Error(`can't find "POSTGRES_DATABASE" env`)
 	}
-	cfg.DB.Conn, exists = os.LookupEnv("POSTGRES_CONN")
-	if !exists {
-		slog.Error(`can't find "POSTGRES_CONN" env`)
-	}
 }
