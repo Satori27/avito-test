@@ -20,13 +20,13 @@ type DB struct {
 	JDBC     string
 }
 
-func MustLoad() *Config {
+func Load() *Config {
 	var cfg Config
-	mustReadEnv(&cfg)
+	readEnv(&cfg)
 	return &cfg
 }
 
-func mustReadEnv(cfg *Config) {
+func readEnv(cfg *Config) {
 	var exists bool
 	cfg.DB.User, exists = os.LookupEnv("POSTGRES_USERNAME")
 	if !exists {

@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-	cfg := config.MustLoad()
+	cfg := config.Load()
 	storage := &psq.Storage{}
 
 	ctx, cancel := context.WithCancel(context.Background())
